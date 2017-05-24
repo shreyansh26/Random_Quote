@@ -1,0 +1,54 @@
+{% load staticfiles  %}
+<!DOCTYPE html>
+  <html>
+  <head>
+    <link rel="shortcut icon" href="{% static 'quote.png' %}"/>
+    <link href="//fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <title>Quotes</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/quote.css' %}">
+    <script>
+    var quotes_list = ['You can do anything, but not everything. — David Allen', 'Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.— Antoine de Saint-Exupéry',
+    'You miss 100 percent of the shots you never take. — Wayne Gretzky',
+    'You must be the change you wish to see in the world. — Gandhi' , 'When hungry, eat your rice; when tired, close your eyes. Fools may laugh at me, but wise men will know what I mean. — Lin-Chi'
+    , 'To the man who only has a hammer, everything he encounters begins to look like a nail. — Abraham Maslow', 'We are what we repeatedly do; excellence, then, is not an act but a habit. — Aristotle',
+  'A wise man gets more use from his enemies than a fool from his friends. — Baltasar Gracian', 'Do not seek to follow in the footsteps of the men of old; seek what they sought. — Basho',
+  'The real voyage of discovery consists not in seeking new lands but seeing with new eyes. — Marcel Proust', 'Even if you’re on the right track, you’ll get run over if you just sit there. — Will Rogers',
+'Life is about making an impact, not making an income. – Kevin Kruse' , 'Strive not to be a success, but rather to be of value. –Albert Einstein',
+'We become what we think about. – Earl Nightingale' , 'I love you the more in that I believe you had liked me for my own sake and for nothing else – John Keats',
+'But man is not made for defeat. A man can be destroyed but not defeated – Ernest Hemingway' , 'When you reach the end of your rope, tie a knot in it and hang on – Franklin D. Roosevelt',
+'There is nothing permanent except change – Heraclitus' , 'You cannot shake hands with a clenched fist – Indira Gandhi',
+'Let us sacrifice our today so that our children can have a better tomorrow – A.P.J. Abdul Kalam' , 'Do not mind anything that anyone tells you about anyone else. Judge everyone and everything for yourself – Henry James',
+'It is better to be feared than loved, if you cannot be both – Niccolo Machiavelli' , 'Learning never exhausts the mind – Leonardo da Vinci',
+'There is no charm equal to tenderness of heart – Jane Austen' , 'All that we see or seem is but a dream within a dream – Edgar Allan Poe',
+'Lord, make me an instrument of thy peace. Where there is hatred, let me sow love – Francis of Assisi']
+
+    function newQuote(){
+      var index = Math.floor(Math.random()* (quotes_list.length));
+      document.getElementById('content').innerHTML = quotes_list[index];
+      //document.getElementById("all").style.backgroundImage = "url('{% static images.jpeg %}')";
+    }
+
+    function init(){
+      newQuote();
+      document.getElementById('bg').onclick = newQuote;
+    }
+    </script>
+
+  </head>
+  <body id="bg" style="background-image: url('{% static "images4.jpg" %}')"; >
+    <!--<div id="bg" style="background-image: url('{% static "images.jpeg" %}')"; >-->
+    <div id="all" class="contain">
+
+   <div class="page-header">
+            <h1>Quote of the day</h1>
+    </div>
+    <br><br>
+    <div id="content">
+    </div>
+  </div>
+
+  </body>
+  <script>init();</script>
+  </html>

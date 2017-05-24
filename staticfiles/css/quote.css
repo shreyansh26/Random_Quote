@@ -1,0 +1,33 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Slabo 27px', serif;
+}
+
+#all {
+  height: 100%;
+}
+
+#bg {
+  background-size: 1800px 900px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+}
+.contain{
+  font-size: 260%;
+  color: #000000;
+  text-align: center;
+}
+
+h1{
+  font-size: 300%;
+  text-align: center;
+  color: #ff4500;
+}
+
+#content {
+  margin-left: 3%;
+  margin-right: 3%;
+
+}
